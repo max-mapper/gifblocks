@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>GIF Blocks</title>
+  <link rel="stylesheet" href="style.css"></link>
+</head>
+<body>
+  <div id="left">
+    <div id="blocker">
+      <div id="instructions">
+        <span class="bigger">GIF Blocks!</span>
+        <br>
+        <span class="big">Click to play</span>
+        <br>
+        <span>(ENTER = Take photo, W, A, S, D = Move, SPACE = Jump, MOUSE = Look around)</span>
+      </div>
+    </div>
+    <div id="crosshair"></div>
+  </div>
+  <div id="right">
+    <a id="export" href="#" class="button">Export GIF</a>
+    <a id="reset" href="#" class="button danger">Reset</a>
+    <div id="images">
+    
+    </div>
+  </div>
+  <script type="text/javascript" src="lib/LZWEncoder.js"></script>
+  <script type="text/javascript" src="lib/NeuQuant.js"></script>
+  <script type="text/javascript" src="lib/GIFEncoder.js"></script>
+  <script type="text/javascript" src="bundle.js"></script>
+</body>
+</html>
