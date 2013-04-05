@@ -8,6 +8,7 @@
   <meta property="og:url" content="http://gifblocks.com/" />
   <meta property="og:image" content="http://gifblocks.com/example.gif" />
   <title>GIF Blocks</title>
+  <link href="ratchet.css" media="screen" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="style.css"></link>
 </head>
 <body>
@@ -16,14 +17,63 @@
       <div id="instructions">
         <span class="bigger">GIF Blocks!</span>
         <br>
+        <span class="emphasis">3D stop motion GIF maker</span>
+        <br>
         <span id="middleMessage" class="big">Loading... please wait</span>
         <br>
-        <span>(ENTER = Take photo, W, A, S, D = Move, SPACE = Jump, MOUSE = Look around)</span>
+        <span>(ENTER = Take photo, W, A, S, D = Move, SPACE = Jump,
+        <br>MOUSE = Look around, R = Switch perspective,
+        <br>CTRL+CLICK = Place block, SHIFT+CLICK = begin + end bulk edit)
+        <br>
+        <br>made by @maxogden with @voxeljs</span>
       </div>
     </div>
     <div id="crosshair"></div>
+    <nav class="bar-tab" id="tools" >
+      <ul class="tab-inner">
+        <li class="tab-item active">
+          <img class="tab-icon" src="http://commondatastorage.googleapis.com/voxeltextures/grass_dirt.png">
+          <div class="tab-label">grass</div>
+        </li>
+        <li class="tab-item">
+          <img class="tab-icon" src="http://commondatastorage.googleapis.com/voxeltextures/obsidian.png">
+          <div class="tab-label">obsidian</div>
+        </li>
+        <li class="tab-item">
+          <img class="tab-icon" src="http://commondatastorage.googleapis.com/voxeltextures/brick.png">
+          <div class="tab-label">brick</div>
+        </li>
+        <li class="tab-item">
+          <img class="tab-icon" src="http://commondatastorage.googleapis.com/voxeltextures/plank.png">
+          <div class="tab-label">plank</div>
+        </li>
+        <li class="tab-item">
+          <img class="tab-icon" src="http://commondatastorage.googleapis.com/voxeltextures/whitewool.png">
+          <div class="tab-label">whitewool</div>
+        </li>
+      </ul>
+    </nav>
   </div>
   <div id="right">
+    <ul class="list">
+      <li class="list-divider">Bulk Edit Action</li>
+      <li class="condensed">
+        <form>
+          <select name="action">
+            <option value="walls" selected>Build walls</option>
+            <option value="overlay">Cover</option>
+            <option value="erase">Erase</option>
+            <option value="move">Move up</option>
+            <option value="replace">Replace</option>
+            <option value="fill">Fill air</option>
+            <option value="nothing">Only highlight</option>
+            <option value="deselect">Deselect region</option>
+          </select>
+        </form>
+      </li>
+      <li class="list-divider">Frame Controls</li>
+    </ul>
+    
     <a id="export" href="#" class="button">Export GIF</a>
     <a id="reset" href="#" class="button danger">Reset</a>
     <div id="images"></div>
