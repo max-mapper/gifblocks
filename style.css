@@ -1,12 +1,11 @@
-@font-face {
-  font-family: Azuki;
-  src: url(azuki.ttf);
-}
-html, body { font-family: Azuki, Arial, sans-serif; margin: 0; padding: 0; width: 100%; height: 100%; }
+@import url("http://fonts.googleapis.com/css?family=Lato:400,700,900,400italic");
+
+html, body { font-family: Lato, Helvetica, Open Sans, Arial, sans-serif; margin: 0; padding: 0; width: 100%; height: 100%; }
 .bigger { position: relative; top: -45px; font-size: 50px; margin-bottom: 10px; }
 .big { position: relative; top: -25px; font-size: 30px; margin-bottom: 10px; }
 #left { position: fixed; top: 0; left: 0; right: 20%; bottom: 0;}
 #right { position: absolute; top: 0; bottom: 0; right: 0; width: 20%; background-color: #D7DCE0;  }
+.errorMessage, .errorMessage a { font-size: 40px; margin: 20px; }
 #images img { width: 90%; padding: 0 5% 5% 5%; }
 #crosshair {
   position: absolute;

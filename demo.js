@@ -3,6 +3,7 @@ var instructions = document.querySelector('#blocker')
 var images = document.querySelector('#images')
 var exportButton = document.querySelector('#export')
 var resetButton = document.querySelector('#reset')
+var message = document.querySelector('#middleMessage')
 
 var game = require('voxel-hello-world')({
   texturePath: textures,
@@ -11,6 +12,9 @@ var game = require('voxel-hello-world')({
   container: document.querySelector('#left'),
   statsDisabled: true
 })
+
+message.innerHTML = "Click to play!"
+if (game.notCapable()) instructions.style.visibility = 'hidden'
 
 game.interact.on('attain', function() { instructions.style.visibility = 'hidden' })
 game.interact.on('release', function() { instructions.style.visibility = 'visible' })
@@ -38,6 +42,7 @@ function shutter() {
 
 var stopMotion = require('voxel-stop-motion')(game)
 window.stop = stopMotion
+window.game = game
 
 stopMotion.cam.position.y = 7
 stopMotion.cam.position.z = 10
