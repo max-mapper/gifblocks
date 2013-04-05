@@ -70,6 +70,7 @@ function setup(game, avatar) {
     if (ev.keyCode === 16) shiftDown = true
     if (ev.keyCode === 'R'.charCodeAt(0)) avatar.toggle()
     if (ev.keyCode === 13) shutter()
+    if (ev.keyCode === 88) setCamera()
   })
 
   window.addEventListener('keyup', function (ev) {
@@ -108,6 +109,13 @@ resetButton.addEventListener('click', function(e) {
   images.innerHTML = ""
   stopMotion.createEncoder()
 })
+
+function setCamera() {
+  var els = game.camera.matrixWorld.elements
+  var pos = {x: els[12], y: els[13], z: els[14]}
+  stop.cam.position.copy(pos)
+  stop.cam.lookAt(new game.THREE.Vector3(0,0,-1).applyMatrix4(game.camera.matrixWorld))
+}
 
 function shutter() {
   var imageURI = stopMotion.shutter()
